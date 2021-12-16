@@ -59,14 +59,14 @@ async function run() {
         });
 
 
-        // // single product load
-        // app.get('/products/:id', async (req, res) => {
-        //     const id = req.params.id;
-        //     console.log('getting specific service', id);
-        //     const query = { _id: ObjectId(id) };
-        //     const product = await productsCollection.findOne(query);
-        //     res.json(product);
-        // })
+// single service load
+        app.get('/services/:id', async (req, res) => {
+            const id = req.params.id;
+            console.log('getting specific service', id);
+            const query = { _id: ObjectId(id) };
+            const service = await servicesCollection.findOne(query);
+            res.json(service);
+        })
 
 
 
