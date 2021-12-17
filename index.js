@@ -34,8 +34,8 @@ async function run() {
         //order place
         const ordersCollection = database.collection('orders');
 
-        // // reviews
-        // const reviewsCollection = database.collection('reviews');
+        // reviews
+        const feedbacksCollection = database.collection('feedbacks');
 
         
 
@@ -122,21 +122,21 @@ async function run() {
 
 
 
-        // // reviews
-        // app.get('/reviews', async (req, res) => {
-        //     const cursor = reviewsCollection.find({});
-        //     const reviews = await cursor.toArray();
-        //     res.send(reviews);
-        // })
+        // reviews
+        app.get('/feedbacks', async (req, res) => {
+            const cursor = feedbacksCollection.find({});
+            const feedbacks = await cursor.toArray();
+            res.send(feedbacks);
+        })
 
 
+        app.post('/feedbacks', async (req, res) => {
+            const feedback = req.body;
+            const result = await feedbacksCollection.insertOne(feedback);
+            res.json(result);
 
-        // app.post('/reviews', async (req, res) => {
-        //     const review = req.body;
-        //     const result = await reviewsCollection.insertOne(review);
-        //     res.json(result);
-
-        // });
+        });
+        
 
 
         // order 
