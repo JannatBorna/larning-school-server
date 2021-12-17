@@ -28,16 +28,16 @@ async function run() {
         const servicesCollection = database.collection('services')
 
 
-
-
         // //user collection
         // const usersCollection = database.collection('users');
 
-        // //order place
-        // const ordersCollection = database.collection('orders');
+        //order place
+        const ordersCollection = database.collection('orders');
 
         // // reviews
         // const reviewsCollection = database.collection('reviews');
+
+        
 
 
 
@@ -139,21 +139,21 @@ async function run() {
         // });
 
 
-        // // order 
-        // app.get('/orders', async (req, res) => {
-        //     const cursor = ordersCollection.find({});
-        //     const orders = await cursor.toArray();
-        //     res.send(orders);
-        // })
+        // order 
+        app.get('/orders', async (req, res) => {
+            const cursor = ordersCollection.find({});
+            const orders = await cursor.toArray();
+            res.send(orders);
+        })
 
 
 
-        // app.post('/orders', async (req, res) => {
-        //     const order = req.body;
-        //     const result = await ordersCollection.insertOne(order);
-        //     res.json(result);
+        app.post('/orders', async (req, res) => {
+            const order = req.body;
+            const result = await ordersCollection.insertOne(order);
+            res.json(result);
 
-        // });
+        });
 
         // //Delete api order
         // app.delete('/orders/:id', async (req, res) => {
