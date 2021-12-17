@@ -155,30 +155,30 @@ async function run() {
 
         
 
-        // //Delete api order
-        // app.delete('/orders/:id', async (req, res) => {
-        //     const id = req.params.id;
-        //     const query = { _id: ObjectId(id) };
-        //     const result = await ordersCollection.deleteOne(query);
-        //     res.json(result);
-        // })
+        //Delete api order
+        app.delete('/orders/:id', async (req, res) => {
+            const id = req.params.id;
+            const query = { _id: ObjectId(id) };
+            const result = await ordersCollection.deleteOne(query);
+            res.json(result);
+        })
 
-        // // UPDATE API
-        // app.put('/orders/:id', async (req, res) => {
-        //     const id = req.params.id;
-        //     const updatedOrder = req.body;
-        //     const filter = { _id: ObjectId(id) };
-        //     const options = { upsert: true };
-        //     const updateDoc = {
-        //         $set: {
-        //             name: updatedOrder.name,
+        // UPDATE API
+        app.put('/orders/:id', async (req, res) => {
+            const id = req.params.id;
+            const updatedOrder = req.body;
+            const filter = { _id: ObjectId(id) };
+            const options = { upsert: true };
+            const updateDoc = {
+                $set: {
+                    name: updatedOrder.name,
 
-        //         },
-        //     };
-        //     const result = await ordersCollection.updateOne(filter, updateDoc, options)
-        //     res.json(result)
+                },
+            };
+            const result = await ordersCollection.updateOne(filter, updateDoc, options)
+            res.json(result)
 
-        // })
+        })
 
 
 
