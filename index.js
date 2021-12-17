@@ -146,14 +146,14 @@ async function run() {
             res.send(orders);
         })
 
-
-
         app.post('/orders', async (req, res) => {
             const order = req.body;
             const result = await ordersCollection.insertOne(order);
             res.json(result);
 
         });
+
+        
 
         // //Delete api order
         // app.delete('/orders/:id', async (req, res) => {
