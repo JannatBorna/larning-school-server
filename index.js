@@ -13,7 +13,7 @@ app.use(express.json());
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.zoj9s.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 
-// console.log(uri)
+console.log(uri)
 
 //username - learningSchool
 //password - nHu2rshShgy5ibi
