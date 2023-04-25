@@ -5,7 +5,7 @@ require('dotenv').config();
 const { MongoClient } = require('mongodb');
 const ObjectId = require('mongodb').ObjectId;
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 2000;
 
 
 app.use(cors());
@@ -15,8 +15,6 @@ const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster
 
 console.log(uri)
 
-//username - learningSchool
-//password - nHu2rshShgy5ibi
 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
