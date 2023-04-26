@@ -76,10 +76,6 @@ async function run() {
             res.json(result);
         })
 
-
-
-
-
         // admin verified
 
         app.get('/users', async (req, res) => {
@@ -106,8 +102,7 @@ async function run() {
         })
 
 
-
-        // admin
+   // admin
         app.put('/users/admin', async (req, res) => {
             const user = req.body;
             const filter = { email: user.email };
@@ -177,8 +172,6 @@ async function run() {
             res.json(result)
 
         })
-
-
 
 
     }
